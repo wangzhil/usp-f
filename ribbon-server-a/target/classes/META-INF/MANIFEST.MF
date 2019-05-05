@@ -1,11 +1,11 @@
 Manifest-Version: 1.0
-Implementation-Title: ribbon-server
+Implementation-Title: ribbon-server-a
 Implementation-Version: 1.0
 Built-By: devel
 Implementation-Vendor-Id: sinosoft.com.developerwang
 Build-Jdk: 1.8.0_201
 Implementation-URL: http://projects.spring.io/spring-boot/developerwan
- g.ribbon/ribbon-server/
+ g.ribbon/ribbon-server-a/
 Created-By: Maven Integration for Eclipse
 Implementation-Vendor: Pivotal Software, Inc.
 

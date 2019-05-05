@@ -5,6 +5,11 @@ spring:
   application:
     name:ribbon-client-a
 
+security:
+  user:
+    name:admin
+    password:123456
+
 eureka:
   instance:
     perferIpAddress:true
@@ -12,12 +17,8 @@ eureka:
   client:
     registerWithEureka:true
     fetchRegistry:true
-    serviceUrl:defaultZone=http://${security.user.name}:${security.user.password}@localhost:8889/eureka/
-
-security:
-  user:
-    name:admin
-    password:123456
+    
+      defaultZone:http://admin:123456@localhost:8889/eureka/
 
 hystrix:
   command:

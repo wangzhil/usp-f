@@ -10,6 +10,7 @@
       <module>ribbon-server-a</module>
       <module>eureka-ribbon-a</module>
       <module>ribbon-server-b</module>
+      <module>rabbitmq-service-a</module>
   </modules>
   <properties>
     
@@ -31,6 +32,12 @@
 	  <groupId>org.springframework.cloud</groupId>
 	  <artifactId>spring-cloud-starter-feign</artifactId>
     </dependency>
+    
+    <dependency> 
+	  <groupId>org.springframework.cloud</groupId> 
+	  <artifactId>spring-cloud-starter-bus-amqp</artifactId> 
+	</dependency>
+	
   </dependencies>
   
   <dependencyManagement>

@@ -5,5 +5,5 @@
     <artifactId>developerwang.ribbon</artifactId>
     <version>1.0</version>
   </parent>
-  <artifactId>ribbon-client</artifactId>
+  <artifactId>rabbitmq-service-a</artifactId>
 </project>
