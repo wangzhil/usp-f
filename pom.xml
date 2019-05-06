@@ -11,6 +11,7 @@
       <module>eureka-ribbon-a</module>
       <module>ribbon-server-b</module>
       <module>rabbitmq-service-a</module>
+      <module>admin-service</module>
   </modules>
   <properties>
     
@@ -24,6 +25,11 @@
 	<version>1.5.2.RELEASE</version>
   </parent>
   <dependencies>
+    <dependency>
+      <groupId>de.codecentric</groupId>
+      <artifactId>spring-boot-admin-starter-client</artifactId>
+      <version>1.3.4</version>
+    </dependency>
     <dependency>
 		<groupId>org.springframework.cloud</groupId>
 		<artifactId>spring-cloud-starter-eureka</artifactId>
