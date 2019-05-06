@@ -12,6 +12,7 @@
       <module>ribbon-server-b</module>
       <module>rabbitmq-service-a</module>
       <module>admin-service</module>
+      <module>zuul-service-a</module>
   </modules>
   <properties>
     
