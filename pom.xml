@@ -13,6 +13,8 @@
       <module>rabbitmq-service-a</module>
       <module>admin-service</module>
       <module>zuul-service-a</module>
+      <module>hystrix-service-a</module>
+      <module>hystrix-turbine-a</module>
   </modules>
   <properties>
     
@@ -26,6 +28,14 @@
 	<version>1.5.2.RELEASE</version>
   </parent>
   <dependencies>
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-hystrix</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-actuator</artifactId>
+    </dependency>
     <dependency>
       <groupId>de.codecentric</groupId>
       <artifactId>spring-boot-admin-starter-client</artifactId>
