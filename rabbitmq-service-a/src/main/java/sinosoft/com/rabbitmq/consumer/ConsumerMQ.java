@@ -13,7 +13,7 @@ public class ConsumerMQ {
 	@RabbitHandler
 	public void conSumerMq(String hello){
 		try {
-			TimeUnit.MINUTES.sleep(1);
+			TimeUnit.SECONDS.sleep(20);
 		} catch (InterruptedException e) {
 			
 			e.printStackTrace();
