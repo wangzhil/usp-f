@@ -10,15 +10,15 @@
 			connectionURL="${jdbc.connectionURL}" userId="${jdbc.userId}"
 			password="${jdbc.password}" />
 		<javaModelGenerator targetPackage="${mybatis.model}"
-			targetProject="usp-common/src/main/java">
+			targetProject="ribbon-client-a/src/main/java">
 			<property name="enableSubPackages" value="false" />
 		</javaModelGenerator>
 		<sqlMapGenerator targetPackage="${mybatis.xml}"
-			targetProject="usp-insure-fanhua-service/src/main/resources">
+			targetProject="ribbon-client-a/src/main/resources">
 			<property name="enableSubPackages" value="false" />
 		</sqlMapGenerator>
 		<javaClientGenerator targetPackage="${mybatis.mapper}"
-			targetProject="usp-insure-fanhua-service/src/main/java" type="XMLMAPPER">
+			targetProject="ribbon-client-a/src/main/java" type="XMLMAPPER">
 			<property name="enableSubPackages" value="false" />
 		</javaClientGenerator>
 		<!-- <table tableName="es_doc_upinfo" domainObjectName="Es_Doc_UpInfo">
@@ -111,7 +111,7 @@
 		
 		<!-- <table tableName="LCAppElcImgDetail" domainObjectName="LCAppElcImgDetail"> 
 		</table> -->
-		<table tableName="lccont" domainObjectName="LcCont"> 
+		<table tableName="testdb2" domainObjectName="TestDb2"> 
 		</table> 
 		<!-- <table tableName="lcinsureacc" domainObjectName="LcInsureAcc"> <generatedKey 
 			column="sid" sqlStatement="Mysql" identity="true"/> </table> -->

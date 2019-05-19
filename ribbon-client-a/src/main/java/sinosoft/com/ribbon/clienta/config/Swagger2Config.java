@@ -34,7 +34,7 @@ public class Swagger2Config {
                 .groupName("") //指定分组，对应(/v2/api-docs?group=)
                 .pathMapping("") //base地址，最终会拼接Controller中的地址
                 .select() //控制要暴露的接口
-                .apis(RequestHandlerSelectors.basePackage("com.guobao.insure.service.facade")) //通过指定扫描包暴露接口
+                .apis(RequestHandlerSelectors.basePackage("sinosoft.com.ribbon.clienta.controller")) //通过指定扫描包暴露接口
                 .paths(PathSelectors.any()) //设置过滤规则暴露接口
                 .build();
     }

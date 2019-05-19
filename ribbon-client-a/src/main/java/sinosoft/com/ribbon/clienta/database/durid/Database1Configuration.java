@@ -12,18 +12,20 @@ import java.util.Arrays;
 import java.util.Properties;
 
 import javax.annotation.Resource;
-
 import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
+import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.bind.RelaxedPropertyResolver;
 import org.springframework.context.ApplicationContextException;
 import org.springframework.context.EnvironmentAware;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.core.env.Environment;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
@@ -42,10 +44,10 @@ import com.github.pagehelper.PageHelper;
  */
 @Configuration
 @EnableTransactionManagement
-@MapperScan(basePackages = { "com.guobao.insure.service.dao", "com.guobao.insure.service.mapper" })
-public class DatabaseConfiguration implements EnvironmentAware {
+@MapperScan(basePackages = {"sinosoft.com.ribbon.clienta.dao1"}, sqlSessionTemplateRef  = "db1SqlSessionTemplate")
+public class Database1Configuration implements EnvironmentAware {
 
-    private static final Logger LOG = LoggerFactory.getLogger(DatabaseConfiguration.class);
+    private static final Logger LOG = LoggerFactory.getLogger(Database1Configuration.class);
 
     @Resource
     private Environment environment;
@@ -54,11 +56,12 @@ public class DatabaseConfiguration implements EnvironmentAware {
     @Override
     public void setEnvironment(Environment environment) {
         this.environment = environment;
-        this.propertyResolver = new RelaxedPropertyResolver(environment, "spring.datasource.");
+        this.propertyResolver = new RelaxedPropertyResolver(environment, "spring.datasource.db1.");
     }
 
     //注册dataSource
-    @Bean(initMethod = "init", destroyMethod = "close")
+    @Bean(initMethod = "init", destroyMethod = "close",name = "db1DataSource")
+    @Primary
     public DruidDataSource dataSource() throws SQLException {
         if (StringUtils.isEmpty(propertyResolver.getProperty("url"))) {
             LOG.error("[DatabaseConfiguration.dataSource][Your database connection pool configuration is incorrect!" + " Please check your Spring profile, current profiles are:"
@@ -88,8 +91,9 @@ public class DatabaseConfiguration implements EnvironmentAware {
         return druidDataSource;
     }
 
-    @Bean
-    public SqlSessionFactory sqlSessionFactory() throws Exception {
+    @Bean(name = "db1SqlSessionFactory")
+    @Primary
+    public SqlSessionFactory sqlSessionFactory( @Qualifier("db1DataSource") DruidDataSource dataSource) throws Exception {
         SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
         sqlSessionFactoryBean.setDataSource(dataSource());
         //mybatis分页
@@ -107,10 +111,16 @@ public class DatabaseConfiguration implements EnvironmentAware {
         return sqlSessionFactoryBean.getObject();
     }
 
-    @Bean
-    public PlatformTransactionManager transactionManager() throws SQLException {
-        return new DataSourceTransactionManager(dataSource());
+    @Bean(name = "db1TransactionManager")
+    @Primary
+    public PlatformTransactionManager transactionManager(@Qualifier("db1DataSource") DruidDataSource dataSource) throws SQLException {
+        return new DataSourceTransactionManager(dataSource);
     }
     
+    @Bean(name = "db1SqlSessionTemplate")
+    @Primary
+    public SqlSessionTemplate sqlSessionTemplate (@Qualifier("db1SqlSessionFactory") SqlSessionFactory sqlSessionFactory) {
+    	return new SqlSessionTemplate(sqlSessionFactory);
+    }
     
 }
