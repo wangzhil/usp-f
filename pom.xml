@@ -16,6 +16,7 @@
       <module>hystrix-service-a</module>
       <module>hystrix-turbine-a</module>
       <module>config-server-a</module>
+      <module>apm-external-skywalking</module>
   </modules>
   <properties>
     
