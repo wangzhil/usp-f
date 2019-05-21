@@ -17,7 +17,7 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootApplication
 @EnableFeignClients
 @EnableCircuitBreaker
-public class RibbonCilentASpringApplication implements CommandLineRunner {
+public class RibbonCilentASpringApplication/* implements CommandLineRunner */{
 
 	public static void main(String[] args) {
 		SpringApplication.run(RibbonCilentASpringApplication.class, args);
@@ -29,7 +29,7 @@ public class RibbonCilentASpringApplication implements CommandLineRunner {
 		return new RestTemplate();
 	}
 
-	@Override
+	/*@Override
 	public void run(String... args) throws Exception {
 		Logger logger = LoggerFactory.getLogger(RibbonCilentASpringApplication.class);
         logger.info("测试log");
@@ -38,7 +38,7 @@ public class RibbonCilentASpringApplication implements CommandLineRunner {
             logger.error("something wrong. id={}; name=Ryan-{};", i, i);
         }
 		
-	}
+	}*/
 	
 //	@Bean
 //	public IRule MyRule(){
