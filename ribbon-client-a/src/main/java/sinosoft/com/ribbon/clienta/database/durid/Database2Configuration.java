@@ -44,8 +44,8 @@ public class Database2Configuration {
 
 
     //注册dataSource
-    @Bean(initMethod = "init", destroyMethod = "close",name = "db2DataSource")
-    @ConfigurationProperties(prefix = "spring.datasource.db2.")
+    @Bean(name = "db2DataSource")
+    @ConfigurationProperties(prefix = "spring.datasource.db2")
     public DruidDataSource dataSource() throws SQLException {
     	return new DruidDataSource();
     }

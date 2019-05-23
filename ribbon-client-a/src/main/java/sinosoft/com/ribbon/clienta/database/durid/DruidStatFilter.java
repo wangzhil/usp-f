@@ -1,10 +1,10 @@
-package sinosoft.com.ribbon.clienta.database.durid;
+/*package sinosoft.com.ribbon.clienta.database.durid;
 
 import com.alibaba.druid.spring.boot.autoconfigure.properties.DruidStatProperties.WebStatFilter;
 
-/**
+*//**
  * druid过滤器.
- */
+ *//*
 @WebFilter(filterName="druidWebStatFilter",
         urlPatterns="/*",
         initParams={
@@ -13,3 +13,4 @@ import com.alibaba.druid.spring.boot.autoconfigure.properties.DruidStatPropertie
 )
 public class DruidStatFilter  extends WebStatFilter {
 }
+*/

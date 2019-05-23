@@ -1,11 +1,11 @@
-package sinosoft.com.ribbon.clienta.database.durid;
+/*package sinosoft.com.ribbon.clienta.database.durid;
 
 import com.alibaba.druid.spring.boot.autoconfigure.properties.DruidStatProperties.StatViewServlet;
 
-/**
+*//**
  * druid数据源状态监控.
  * @author syrain
- */
+ *//*
 @WebServlet(urlPatterns="/druid/*",
         initParams={
                 @WebInitParam(name="allow",value=""),// IP白名单(没有配置或者为空，则允许所有访问)
@@ -18,3 +18,4 @@ import com.alibaba.druid.spring.boot.autoconfigure.properties.DruidStatPropertie
 public class DruidStatViewServlet  extends StatViewServlet {
     private static final long serialVersionUID = 1L;
 }
+*/

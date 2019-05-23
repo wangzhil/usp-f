@@ -8,32 +8,22 @@
 package sinosoft.com.ribbon.clienta.database.durid;
 
 import java.sql.SQLException;
-import java.util.Arrays;
 import java.util.Properties;
-import javax.annotation.Resource;
 import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.annotation.MapperScan;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.context.properties.bind.Binder;
-import org.springframework.context.ApplicationContextException;
-import org.springframework.context.EnvironmentAware;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
-import org.springframework.core.env.Environment;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-
 import com.alibaba.druid.pool.DruidDataSource;
-import com.alibaba.druid.util.StringUtils;
 import com.github.pagehelper.PageHelper;
 
 /**
@@ -43,15 +33,14 @@ import com.github.pagehelper.PageHelper;
  * @date 2018-04-15 22:54
  */
 @Configuration
-@EnableTransactionManagement
 @MapperScan(basePackages = {"sinosoft.com.ribbon.clienta.dao1"}, sqlSessionTemplateRef  = "db1SqlSessionTemplate")
 public class Database1Configuration {
 
 
     //注册dataSource
-    @Bean(initMethod = "init", destroyMethod = "close",name = "db1DataSource")
+    @Bean(name = "db1DataSource")
+    @ConfigurationProperties(prefix = "spring.datasource.db1")
     @Primary
-    @ConfigurationProperties(prefix = "spring.datasource.db1.")
     public DruidDataSource dataSource() throws SQLException {
        
         return new DruidDataSource();
