@@ -2,10 +2,9 @@ Manifest-Version: 1.0
 Implementation-Title: zuul-service-a
 Implementation-Version: 1.0
 Built-By: devel
-Implementation-Vendor-Id: sinosoft.com.developerwang
+Implementation-Vendor-Id: sinosoft.com
 Build-Jdk: 1.8.0_201
-Implementation-URL: http://projects.spring.io/spring-boot/developerwan
- g.ribbon/zuul-service-a/
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/usp-f/zuul-service-a
 Created-By: Maven Integration for Eclipse
-Implementation-Vendor: Pivotal Software, Inc.
 

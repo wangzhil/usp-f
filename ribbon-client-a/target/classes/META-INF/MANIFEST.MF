@@ -2,10 +2,9 @@ Manifest-Version: 1.0
 Implementation-Title: ribbon-client-a
 Implementation-Version: 1.0
 Built-By: devel
-Implementation-Vendor-Id: sinosoft.com.developerwang
+Implementation-Vendor-Id: sinosoft.com
 Build-Jdk: 1.8.0_201
-Implementation-URL: http://projects.spring.io/spring-boot/developerwan
- g.ribbon/ribbon-client-a/
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/usp-f/ribbon-client-a
 Created-By: Maven Integration for Eclipse
-Implementation-Vendor: Pivotal Software, Inc.
 
