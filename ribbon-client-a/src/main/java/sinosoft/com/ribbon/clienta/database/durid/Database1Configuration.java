@@ -37,12 +37,11 @@ import com.github.pagehelper.PageHelper;
 public class Database1Configuration {
 
 
-    //注册dataSource
+	//注册dataSource
     @Bean(name = "db1DataSource")
     @ConfigurationProperties(prefix = "spring.datasource.db1")
     @Primary
     public DruidDataSource dataSource() throws SQLException {
-       
         return new DruidDataSource();
     }
 

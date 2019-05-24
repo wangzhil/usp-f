@@ -8,9 +8,9 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableDiscoveryClient
 @SpringBootApplication
 @EnableFeignClients
-public class RibbonServerBSpringApplication {
+public class RibbonServerASpringApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(RibbonServerBSpringApplication.class, args);
+		SpringApplication.run(RibbonServerASpringApplication.class, args);
 	}
 }
