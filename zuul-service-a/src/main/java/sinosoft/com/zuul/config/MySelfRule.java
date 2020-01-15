@@ -8,6 +8,7 @@ import org.springframework.web.client.RestTemplate;
 import com.netflix.loadbalancer.IRule;
 import com.netflix.loadbalancer.RoundRobinRule;
 
+
 @Configuration
 public class MySelfRule {
 
