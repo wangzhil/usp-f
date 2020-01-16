@@ -14,8 +14,6 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.annotation.MapperScan;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -40,7 +38,7 @@ import com.github.pagehelper.PageHelper;
 @Primary
 public class Database2Configuration {
 
-    private static final Logger LOG = LoggerFactory.getLogger(Database2Configuration.class);
+//    private static final Logger LOG = LoggerFactory.getLogger(Database2Configuration.class);
 
 
     //注册dataSource

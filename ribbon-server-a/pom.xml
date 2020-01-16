@@ -53,6 +53,10 @@
                 <artifactId>logback-access</artifactId>
                 <version>${ch.qos.logback.version}</version>
             </dependency>
+            <dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-starter-bus-amqp</artifactId>
+			</dependency>
         </dependencies>
     </dependencyManagement>
 	<build>

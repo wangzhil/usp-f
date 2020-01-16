@@ -23,7 +23,8 @@ import com.alibaba.druid.support.http.WebStatFilter;
  */
 @Configuration
 public class DruidConfig {
-    @Bean
+    @SuppressWarnings({ "unchecked", "rawtypes" })
+	@Bean
     public ServletRegistrationBean druidServlet() {
         ServletRegistrationBean reg = new ServletRegistrationBean();
         reg.setServlet(new StatViewServlet());
@@ -35,7 +36,8 @@ public class DruidConfig {
         return reg;
     }
 
-    @Bean
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+	@Bean
     public FilterRegistrationBean filterRegistrationBean() {
         FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean();
         filterRegistrationBean.setFilter(new WebStatFilter());

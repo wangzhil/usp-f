@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class RibbonServerA {
 
 	@RequestMapping(value = "/RibbonServerA",method = RequestMethod.POST)
-	public String RibbonServerA(String param){
+	public String RibbonServerAA(String param){
 		System.err.println("RibbonServerB.....in....");
 		return "param : "+param+";Ribbon B Service ..";
 	}
