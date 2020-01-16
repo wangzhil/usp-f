@@ -8,9 +8,6 @@
 	</parent>
 	<artifactId>config-server-a</artifactId>
 
-
-
-
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>

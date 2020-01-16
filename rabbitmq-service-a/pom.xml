@@ -6,4 +6,6 @@
     <version>1.0</version>
   </parent>
   <artifactId>rabbitmq-service-a</artifactId>
+  
+  
 </project>
