@@ -20,6 +20,7 @@
 		<module>config-server-a</module>
 		<module>apm-external-skywalking</module>
 		<module>zipkin-server-service</module>
+		<module>usp-redis-a</module>
 	</modules>
 	<properties>
 		<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
@@ -88,6 +89,7 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
